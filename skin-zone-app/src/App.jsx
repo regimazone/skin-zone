@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
+import CognitiveSynergyEnhanced from '@/components/CognitiveSynergyEnhanced.jsx'
 import CognitiveSynergy from '@/components/CognitiveSynergy.jsx'
 import OpenCogInsights from '@/components/OpenCogInsights.jsx'
 import { 
@@ -28,7 +29,7 @@ import './App.css'
 
 // Cognitive Synergy Components
 const CognitiveDashboard = () => {
-  const [synergyMetrics, setSynergyMetrics] = useState({
+  const [synergyMetrics] = useState({
     networkStrength: 87,
     adaptiveCapacity: 92,
     emergentIntelligence: 78,
@@ -146,7 +147,7 @@ const CognitiveDashboard = () => {
 
 // Ingredient Marketplace Component
 const IngredientMarketplace = () => {
-  const [ingredients, setIngredients] = useState([
+  const [ingredients] = useState([
     {
       id: 1,
       name: "Hyaluronic Acid",
@@ -288,7 +289,7 @@ const IngredientMarketplace = () => {
 
 // Salon & Spa Directory Component
 const SalonDirectory = () => {
-  const [salons, setSalons] = useState([
+  const [salons] = useState([
     {
       id: 1,
       name: "Luxe Skin Studio",
@@ -395,7 +396,7 @@ const SalonDirectory = () => {
 }
 
 // Main Navigation Component
-const Navigation = ({ activeTab, setActiveTab }) => {
+const Navigation = () => {
   return (
     <nav className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -434,7 +435,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Navigation />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
